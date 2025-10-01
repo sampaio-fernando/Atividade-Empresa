@@ -18,7 +18,7 @@ namespace Atividade_Empresa.Models
         public required string CNPJ {  get; set; }
 
         [Column("insc_estadual_emp")]
-        public string Insc_estadual {  get; set; }
+        public string? Insc_estadual {  get; set; }
 
         [Column("telefone_emp")]
         public required string Telefone {  get; set; }

@@ -1,4 +1,14 @@
+using Atividade_Empresa.DataContexts;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//String de conexão no appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+//Registrando o DbContext no container de DI
+builder.Services.AddDbContext<AppDbContext>(options =>
+options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Add services to the container.
 
